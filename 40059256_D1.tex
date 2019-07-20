@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\title{ \centering Software Engineering Process \\ Deliverable 1}
+
+\author{Sidhant Gupta \\ SID : 40059256}
+
+\date{19 July 2019}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section{Problem-1}
+
+The Tangent(tan) function is one of the most familiar trigonometric functions. 
+\newline
+In case of a right angled triangle, the tan of an angle can be defined as: the ratio between the length of the opposite side and the length of the adjacent side. This can be denoted as  :
+\newline
+\newline
+$tan( \theta ) = \frac{length of opposite)}{length of adjacent }$
+\newline
+\newline
+One of the common identities that shows the relation between various trigonometric identities is :
+\newline
+\newline
+$tan(\theta) = \frac{ sin(\theta)}{cos(\theta) }$
+\newline
+\newline
+Features of tan( ) function :
+\newline
+\begin{enumerate}
+\item Domain : $ \{x\mid x \neq \frac{\pi}{2} + k\pi , k= ...,-1,0,1,...   \}$
+\item Co-Domain : R
+\item Period : $\pi $
+\item tan(x) is symmetric 
+\end{enumerate}
+\newpage
+\section{Problem-2}
+Functional requirements:
+\newline
+1. Assumptions:
+\begin{enumerate}
+    \item All inputs to the function will be numeric
+    \item Input will be a real number
+    \item Input will be assumed in degrees 
+\end{enumerate}
+2. Requirements:
+\newline
+\begin{itemize}
+\item ID : ETRN-REQ-1
+    \begin{enumerate}
+        \item Type : Functional requirement 
+		\item Version : 1.0
+		\item Difficulty : Easy
+		\item Owner : Author
+		\item Description : User can enter any valid number for the function tan(x)
+        \item Rationale : The tan() function returns valid values for all inputs except only for $ x = \frac{\pi}{2} + k\pi $ . In this case, NaN can be returned.   
+    \end{enumerate}
+\item ID : ETRN-REQ-2
+    \begin{enumerate}
+        \item Type : Functional requirement 
+		\item Version : 1.0
+		\item Difficulty : Medium
+		\item Owner : Author
+		\item Description : tan(x) returns the computed value when $ x \neq \frac{\pi}{2} + k\pi$
+        \item Rationale : The domain for tan(x) is satisfied. Hence calculated value will be returned.
+    \end{enumerate}
+    \newpage
+\item ID : ETRN-REQ-3
+    \begin{enumerate}
+        \item Type : Functional requirement 
+		\item Version : 1.0
+		\item Difficulty : Easy
+		\item Owner : Author
+		\item Description : tan(x) returns NaN when $ x = \frac{\pi}{2} + k\pi$
+        \item Rationale : The domain for tan(x) is not satisfied. The function returns NaN. No computation is required.
+
+    \end{enumerate}
+\item ID : ETRN-REQ-4
+    \begin{enumerate}
+        \item Type : Functional requirement 
+		\item Version : 1.0
+		\item Difficulty : Easy
+		\item Owner : Author
+		\item Description : When input is non-numeric, Incorrect format exception is thrown
+        \item Rationale : tan(x) is a mathematical function that only accepts numerical values.
+
+    \end{enumerate}
+\end{itemize}
+\newpage
+\section{Problem-3}
+\textbf{Algorithm 1 : Calculation of tan(x) using Taylor series expansion}
+\begin{enumerate}
+    \item if x not in range(0,180) then,
+    \item \hspace*{10mm} Subtract largest multiple of 180 less than x 
+    \item end if
+    \item if $ x > 90 \hspace{1mm} \wedge \hspace{1mm} x < 180 $ then,
+    \item \hspace*{10mm} $ x  \leftarrow x - 180 $
+    \item end if
+    \item if $ x > 45 \hspace{1mm} \wedge \hspace{1mm} x < 90 $ then,
+    \item \hspace*{10mm} $x1 \leftarrow 90 - x $
+    \item \hspace*{10mm} return $ \frac{1}{ tan(x1) }  $
+    \item end if
+    \item if $ x > 22.5 \hspace{1mm} \wedge \hspace{1mm} x < 45 $ then,
+    \item \hspace{10mm} return $ \frac{ 2*tan(\frac{x}{2})}{1 - tan^2(\frac{x}{2})}$
+    \item end if 
+    \item if $ x < 22.5 $ then,
+    \item \hspace{10mm} $ z \leftarrow x * \frac{\pi}{180} $
+    \item \hspace{10mm} return $ z + \frac{z^3}{3} + \frac{2z^5}{15} + \frac{17z^7}{315} $
+\end{enumerate}
+\newpage
+\textbf{Algorithm 2 : Computing tan(x) as a ratio of sin and cos}
+\begin{enumerate}
+    \item $x1 \leftarrow sin(x)$
+    \item $x2 \leftarrow cos(x)$
+    \item return $ \frac{x1}{x2}$
+\end{enumerate}
+
+\textbf{Factors in algorithm selection :}
+\begin{enumerate}
+    \item Algorithm 1 gives accuracy of $\pm 0.000006$
+    \item Algorithm 1 is efficient 
+    \item Algorithm 2 uses ratio of 2 separately calculated values. This approach lacks precision.
+    \item Algorithm 2 is dependent on sin(x) and cos(x) functions
+    
+    
+\end{enumerate}
+\end{document}
+
