@@ -14,7 +14,7 @@ public class CalculatorDriver {
 			try {
 				printMenu();
 				objScanner = new Scanner(System.in);
-				int userInput = objScanner.nextInt();
+				int userInput = Integer.parseInt(objScanner.nextLine());
 
 				switch (userInput) {
 				case 1:
@@ -55,7 +55,7 @@ public class CalculatorDriver {
 	}
 
 	public static void printMenu() {
-		System.out.println("\n\n\n");
+		System.out.println("\n");
 		System.out.println("Scientific Calculator");
 		System.out.println("Operation : tan(x)");
 		System.out.println("1. Enter value for x : angle(degrees)");
