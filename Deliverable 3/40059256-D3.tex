@@ -1,0 +1,72 @@
+\documentclass[10pt]{report}
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[english]{babel}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage{tgbonum}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+\begin{document}
+{\fontfamily{cmr}\selectfont
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+		\HRule{0.5pt} \\
+		\LARGE \textbf{\uppercase{Deliverable 3}
+		\\Software Engineering Process
+		\HRule{2pt} \\ [0.5cm]
+		\normalsize  \vspace*{5\baselineskip}}
+		}
+\author{
+		Sidhant Gupta \\ 
+		40059256\\  }
+\date{August 2, 2019}
+\maketitle
+\newpage
+
+\sectionfont{\scshape}
+
+\section{Problem 5}
+%about code review
+Code review, also called peer review, is a software quality assurance activity that involves manual or automated review of the source code by software engineer other than the code's author. This section reviews the F3 : sinh(x) function. 
+\subsection{Review Approach}
+\input{approach.tex}
+
+
+\subsection{Review Results}
+\input{results.tex}
+
+\subsection{Comments}
+\input{comments.tex}
+
+\newpage
+\section{Problem 7}
+This section cover the testing of the function F4: $ \log_b (x) $ .
+\\
+The JUnit 4 framework has been used for writing and verifying the unit tests of the given function.
+The given test cases all map to the functional requirements and the test cases executed successfully. 
+
+\section*{Repository}
+GitHub URL : https://github.com/SidhantGupta92/soen-6011-40059256/
+\section*{References}
+[1]. [Wikipedia] URL: https://en.wikipedia.org/wiki/Code\_review
+\newline
+[2]. [PMD] URL: https://github.com/pmd
+\newline
+[3]. [blog.jetbrains.com] URL: https://blog.jetbrains.com/upsource/2015/07/23/what-to-look-for-in-a-code-review/
+
+}
+\end{document}
